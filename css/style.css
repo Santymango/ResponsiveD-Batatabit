@@ -5,6 +5,7 @@
 4. Visuales - Bos shadow, border-radius, etc.
 5. Otros
 */
+/* =====VALORES DE LA RAIZ Y VARIABLES======= */
 :root {
   /*Colores*/
   --bitcoin-orange: #f7931a;
@@ -17,7 +18,7 @@
   --off-white: #faf8f7;
   --just-white: #fff;
 }
-
+/* =====REGLA GENERAL PARA CENTRADO DE LA CAJA======= */
 * {
   margin: 0;
   padding: 0;
@@ -29,6 +30,7 @@ html {
   font-family: "DM Sans", sans-serif;
   scroll-behavior: smooth;
 }
+/* =====HEADER======= */
 header {
   position: relative;
   display: flex;
@@ -69,6 +71,7 @@ header img {
   line-height: 1.8rem;
   color: var(--soft-orange);
 }
+/* =====BOTON DEL HEADER ======= */
 .header--title-container .header--button {
   position: absolute;
   left: calc(50% - 114.5px);
@@ -79,8 +82,7 @@ header img {
   width: 229px;
   height: 48px;
   background-color: var(--off-white);
-  /* Sombra*/
-  box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+  box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16); /* Sombra*/
   border: none;
   border-radius: 4px;
   font-size: 1.4rem;
@@ -95,6 +97,7 @@ header img {
   margin-left: 5px;
   background-image: url("../assets/icons/down-arrow.svg");
 }
+/* =====MAIN======= */
 main {
   width: 100%;
   min-width: 320px;
@@ -106,15 +109,11 @@ main {
   height: auto;
   padding-top: 80px;
   padding-bottom: 30px;
-  text-align: center;
+  /* text-align: center; */
+  text-align: -webkit-center;
   background-color: #e5e5e5;
 }
-.main-exchange-container--title {
-  width: 90%;
-  min-width: 288px;
-  max-width: 900px;
-  margin: 0 auto;
-}
+/* =====IMAGEN EN EL MAIN ======= */
 .main-exchange-container .backgroundImg {
   width: 200px;
   height: 200px;
@@ -125,6 +124,14 @@ main {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* =====TITULO EN EL MAIN ======= */
+.main-exchange-container--title {
+  width: 90%;
+  min-width: 288px;
+  max-width: 900px;
+  margin: 0 auto;
+}
 .main-exchange-container h2 {
   margin-bottom: 24px;
   font-size: 2.4rem;
@@ -132,6 +139,7 @@ main {
   line-height: 2.6rem;
   color: var(--warm-black);
 }
+/* =====P EN EL MAIN ======= */
 .main-exchange-container p {
   margin-bottom: 48px;
   font-size: 1.4rem;
@@ -139,19 +147,40 @@ main {
   line-height: 1.8rem;
   color: #757575;
 }
+/* =====SECCION SCROLL HORIZONTAL TABLAS DIVISAS Y COMISION======= */
+.main-tables-container {
+  width: 85%;
+  display: flex;
+  align-items: baseline;
+  height: 320px;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-snap-align: center;
+  padding: 1rem 0;
+}
+.main-tables-container::-webkit-scrollbar {
+  background-color: var(--soft-orange);
+  height: 3px;
+}
+.main-tables-container::-webkit-scrollbar-thumb {
+  background-color: var(--bitcoin-orange);
+}
+/* =====ESTA ES LA SECCION DE LA TABLAS DE DIVISAS Y COMISION======= */
 .main-currency-table,
 .main-commission-table {
   width: 70%;
   min-width: 235px;
   max-width: 500px;
-  height: 194px;
+  height: 250px;
   margin: 0 auto;
+  scroll-snap-align: center;
   font-family: "Inter", sans-serif;
 }
 .main-currency-table .currency-table--tittle,
 .main-commission-table .commission-table--tittle {
-  text-align: left;
-  margin-bottom: 12px;
+  text-align: center;
+  margin-bottom: 10px;
   font-size: 1.8rem;
   font-weight: bold;
   line-height: 2.3rem;
@@ -159,7 +188,7 @@ main {
   font-family: "DM sans", sans-serif;
 }
 .main-commission-table .commission-table--tittle {
-  margin-top: 40px;
+  /* margin-top: 40px; */
   color: var(--secondary-blue);
 }
 .currency-table--container,
@@ -174,6 +203,7 @@ main {
 .commission-table--container table {
   width: 100%;
   height: 100%;
+  text-align: center;
 }
 .currency-table--container td,
 .commission-table--container td {
@@ -184,6 +214,7 @@ main {
   color: var(--grey);
   background-color: var(--just-white);
 }
+/* =====SECCION DE REDONDEADO BORDES EN TABLAS DE DIVISA Y COMISION ======= */
 .currency-table--container .table__top-left,
 .commission-table--container .table__top-left {
   border-radius: 8px 0px 0px 0px;
@@ -200,6 +231,7 @@ main {
 .commission-table--container .table__bottom-right {
   border-radius: 0px 0px 8px 0px;
 }
+/* =====SECCION DE ESTILOS PARA PRECIOS TABLAS DIVISAS Y COMISION ======= */
 .currency-table--container
   .table__right
   .commission-table--container
@@ -209,6 +241,7 @@ main {
   line-height: 1.7rem;
   color: #757575;
 }
+/* =====SECCION ICONOS SUBE Y BAJA LOS PRECIOS DE LAS TABLAS ======= */
 .currency-table--container .down {
   display: inline-block;
   width: 11px;
@@ -229,6 +262,7 @@ main {
   background-position: center;
   background-repeat: no-repeat;
 }
+/* =====SECCION DE LAS FECHAS DE ACTUALIZADO  ======= */
 .currency-table--date,
 .commission-table--date {
   width: max-content;
@@ -247,6 +281,7 @@ main {
   line-height: 1.5rem;
   color: var(--warm-black);
 }
+/* =====SECCION DE LAS TABLAS DE DETALLES DEL PRODUCTO ======= */
 .main-product-detail {
   position: relative;
   width: 100%;
@@ -255,14 +290,16 @@ main {
   padding: 20px 10px;
   background-color: var(--warm-black);
 }
+/* =====logo centrado  ======= */
 .product-detail--batata-logo {
   position: absolute;
   width: 40px;
   height: 25px;
   top: -12px;
   left: calc(50% - 20px);
-  background-image: url(../assets/icons/batata.svg);
+  background-image: url("../assets/icons/batata.svg");
 }
+/* =====Titulo de la seccion Producto ======= */
 .product-detail--title {
   width: 90%;
   min-width: 288px;
@@ -278,6 +315,7 @@ main {
   line-height: 2.6rem;
   color: var(--just-white);
 }
+/* =====Parrafo de la seccion Producto ======= */
 .product-detail--title p {
   margin-bottom: 20px;
   font-size: 1.4rem;
@@ -285,6 +323,7 @@ main {
   line-height: 1.8rem;
   color: #808080;
 }
+/* =====GENERAL para las tarjetas de Producto ======= */
 .product-detail--card {
   width: 90%;
   min-width: 288px;
@@ -296,6 +335,7 @@ main {
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
 }
+/* =====Titulo de las tarjeta de Producto ======= */
 .product-card-title {
   margin-bottom: 15px;
   font-size: 1.8rem;
@@ -303,12 +343,14 @@ main {
   line-height: 1.8rem;
   color: var(--just-white);
 }
+/* =====Cuerpo  de la Tarjeta Producto ======= */
 .product-card-body {
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.8rem;
   color: #808080;
 }
+/* =====ICONO RELOJ tarjeta de Producto 1 ======= */
 .product-detail--icon-card__clock {
   display: inline-block;
   width: 24px;
@@ -317,8 +359,9 @@ main {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../assets/icons/clock.svg);
+  background-image: url("../assets/icons/clock.svg");
 }
+/* =====ICONO ojo tarjeta de Producto 2 ======= */
 .product-detail--icon-card__eye {
   display: inline-block;
   width: 24px;
@@ -327,8 +370,9 @@ main {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../assets/icons/eye.svg);
+  background-image: url("../assets/icons/eye.svg");
 }
+/* =====ICONO PESOS tarjeta de Producto 3 ======= */
 .product-detail--icon-card__money {
   display: inline-block;
   width: 24px;
@@ -337,8 +381,9 @@ main {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../assets/icons/dollar-sign.svg);
+  background-image: url("../assets/icons/dollar-sign.svg");
 }
+/* =====ICONO CHECK tarjeta de Producto 4 ======= */
 .product-detail--icon-card__check {
   display: inline-block;
   width: 24px;
@@ -349,6 +394,8 @@ main {
   background-repeat: no-repeat;
   background-image: url("../assets/icons/check-circle.svg");
 }
+/* =====esta es la seccion DE LA IMAGEN NARANJA ======= */
+
 .bitcoin-img-container {
   width: 100%;
   min-width: 320px;
@@ -371,7 +418,7 @@ main {
   min-width: 320px;
   padding-bottom: 64px;
   height: auto;
-  text-align: center;
+  /* text-align: center; */
   text-align: -webkit-center;
   background-color: #e5e5e5;
 }
@@ -468,7 +515,7 @@ main {
   vertical-align: 25px;
 }
 
-/* =====esta es la seccion de los Titulo y PRECIO de las tarjeas MES y AÑO ======= */
+/* =====esta es la seccion de los Titulo y PRECIO de las tarjetas MES y AÑO ======= */
 .plan-card--title {
   padding-top: 30px;
   font-size: 1.4rem;
@@ -651,7 +698,7 @@ footer .left ul {
   text-decoration: none;
   color: var(--just-white);
 }
-/* =seccion d elos creditos= */
+/* =seccion de los creditos= */
 .credito {
   width: 100%;
   height: 30px;

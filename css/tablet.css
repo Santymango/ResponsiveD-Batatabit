@@ -1,0 +1,66 @@
+/* =====ESTO ES PARA EL HEADER Y EL BOTON ======= */
+.header {
+  height: 100vh;
+  width: 100vw;
+}
+
+.header--title-container .header--button {
+  top: auto;
+  margin-top: 150px;
+}
+header img {
+  width: 300px;
+  height: 48px;
+  margin-top: 60px;
+}
+/* =====ESTO ES PARA AUMENTAR LA FUENTE DEL TITULO Y P======= */
+.header--title-container h1 {
+  font-size: 4rem;
+  line-height: 3.5rem;
+}
+.header--title-container p {
+  font-size: 2.5rem;
+}
+.main-exchange-container h2 {
+  font-size: 3rem;
+  line-height: 2.5rem;
+}
+.main-exchange-container p {
+  font-size: 2rem;
+  line-height: 2.3rem;
+}
+.currency-table--date p,
+.commission-table--date p {
+  font-size: 1.2rem;
+  align-items: center;
+}
+
+/* =====ESTA ES LA SECCION ES PARA LAS 4 TARJETAS DE PRODUCTO======= */
+
+.product-detail--title h2 {
+  font-size: 3rem;
+  line-height: 2.5rem;
+}
+.product-detail--title p {
+  font-size: 2rem;
+  line-height: 2.3rem;
+}
+
+.product-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 950px;
+  margin: 0 auto;
+}
+/* =====ESTA ES PARA CAMBIAR LA IMG NARANJA Y PONER PARALLAX======= */
+.bitcoin-img-container {
+  background-image: url("../assets/img/bitcoinbaby4x.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* =====ESTA ES LA SECCION PARA LAS TABLAS DE PRECIOS======= */
+.plans-container--slider {
+  justify-content: center;
+}
